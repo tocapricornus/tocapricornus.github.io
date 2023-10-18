@@ -21,6 +21,7 @@ def read_file(path):
 def save_file(path, content):
     f_output = open(f'{path}','w', encoding='UTF8')
     try:
+        print("save_file path ",path)
         f_output.write(str(content))
     except Exception as e:
         print(e)
