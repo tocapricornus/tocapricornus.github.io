@@ -2,10 +2,10 @@
 #https://crontab.guru/
 
 name: action
-on: [push]
-# on:    
-#  schedule:
-#  - cron: "1 8,20 * * *"
+# on: [push]
+on:    
+ schedule:
+ - cron: "1 8,20 * * *"
 
 
 jobs:
