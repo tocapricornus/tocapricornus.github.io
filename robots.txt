@@ -1,0 +1,6 @@
+User-agent: * 
+Disallow: /tp 
+Disallow: /py 
+Allow:/ 
+
+Sitemap: https://capricornus.github.io/sitemap.xml
