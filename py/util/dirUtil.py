@@ -10,11 +10,14 @@ def isDirPath():
 
 tp_name = 'content.html'
 
-action_checkout_path = 'static_site_repo'
+action_checkout_path = 'static_site_repo' #action에서 체크아웃위치
 
 file_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #D:\project_2023\html_template\py
 file_dir_one =os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))#D:\project_2023\html_template
 file_dir_two = os.path.dirname(os.path.realpath(file_dir_one)) #D:\project_2023
+
+if CF.IS_REAL:
+	file_dir_one = f'{file_dir_two}/{action_checkout_path}' 
 
 #템플릿 위치
 svr_tp_path = file_dir_one+"/tp/example/" #D:\project_2023\html_template/tp/example/
