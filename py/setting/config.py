@@ -2,8 +2,8 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 IS_REAL                 =  False if os.environ['DEV'] == 'Y' else True 
-SITE_URL                = "https://capricornus.github.io"
-SITE_NAME               = "capricornus" 
+SITE_URL                = "https://tocapricornus.github.io"
+SITE_NAME               = "tocapricornus" 
 SITE_DESC               = "염소자리와 함게 책을 보자."
 SITE_KIND               = "BOOK" #BOOK
 KEYWORDS                = "염소자리 책 리뷰" #BLOG 
