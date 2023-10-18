@@ -60,6 +60,7 @@ jobs:
         
     - name: push changed files    
       run: |
+        pwd
         cd ../static_site_repo
         git add --all
         git commit -m "autocommit"        
