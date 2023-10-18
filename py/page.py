@@ -100,15 +100,10 @@ class pageUtil:
         card_list.append((self.page_title_nm, f'{self.today.year}.{self.today.month}.{self.today.day}', self.page_content_text, self.page_img_url, self.real_content_path ))
         for i in card_info:	
             card_list.append((i.select_one('.card-title').text,i.select_one('.text-muted').text,i.select_one('.card-text').text,i.img['src'], i.a['href']))
-        print("card_list /: ", card_list)
+        
         for_cnt=0
         for i in range(0,card_info_max_len):
             list = card_list[for_cnt]
-            print(f'{for_cnt}- {list[0]}')
-            print(f'{for_cnt}- {list[1]}')
-            print(f'{for_cnt}- {list[2]}')
-            print(f'{for_cnt}- {list[3]}')
-            print(f'{for_cnt}- {list[4]}')
             self.mainContent.select_one(f'#index_title_{    for_cnt+1}').string = list[0]
             self.mainContent.select_one(f'#index_ymd_{      for_cnt+1}').string = list[1]
             self.mainContent.select_one(f'#index_content_{  for_cnt+1}').string = f'{str(list[2])[:100]}...'
