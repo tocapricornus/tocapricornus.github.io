@@ -12,7 +12,6 @@ class pageUtil:
 
         self.mainContent_soup = FILEUTIL.read_file(mainPath)
         self.mainContent = self.mainContent_soup.contents[2]
-        
         self.url_file_nm = int(datetime.timestamp(datetime.now()))
         self.ext = 'html'
         self.root_html='<!DOCTYPE html>\n'
@@ -155,7 +154,7 @@ class pageUtil:
         if not origin:
             if sitemap_data.find(self.real_content_path) == -1:
                 first_idx = len(new_data)
-                new_data += f'<url><loc>{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>'
+                new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>'
 
         new_data += '</urlset>'  
         FILEUTIL.save_file(self.real_sitemap_file_path, new_data)
