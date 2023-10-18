@@ -10,6 +10,8 @@ def isDirPath():
 
 tp_name = 'content.html'
 
+action_checkout_path = 'static_site_repo'
+
 file_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #D:\project_2023\html_template\py
 file_dir_one =os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))#D:\project_2023\html_template
 file_dir_two = os.path.dirname(os.path.realpath(file_dir_one)) #D:\project_2023
