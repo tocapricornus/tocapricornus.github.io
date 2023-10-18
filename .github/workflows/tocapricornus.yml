@@ -17,7 +17,7 @@ jobs:
         python-version: [3.8]
         
     steps:               
-    - name:  blog
+    - name: checkout
       uses: actions/checkout@master
     - name: git config
       run: |
@@ -55,6 +55,7 @@ jobs:
       env: 
         NV_CENTER_API: ${{ secrets.NV_CENTER_API }}        
         DB_INFO: ${{ secrets.DB_INFO }}
+        DEV: ${{ secrets.DEV }}
 
         
     - name: push changed files    
