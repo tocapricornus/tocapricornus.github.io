@@ -2,7 +2,12 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 IS_REAL                 = not os.environ['DEV']
-
+print(IS_REAL)
+if IS_REAL:
+    print("true")
+else:
+    print("False")
+quit()
 SITE_URL                = "https://capricornus.github.io"
 SITE_NAME               = "capricornus" 
 SITE_DESC               = "염소자리와 함게 책을 보자."
