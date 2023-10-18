@@ -1,7 +1,7 @@
 #-*-coding:utf-8
+import os, sys
 from setting import config as CF
 from pathlib import Path
-import os, sys
 from page import pageUtil
 import util.dirUtil as dirUtil
 from datetime import datetime
@@ -26,12 +26,7 @@ def project_origin(origin=False):
     pu.change_sitemap(origin=True)
     quit()
 
-if __name__=="__main__":
-    try:
-        IS_REAL = not os.environ['DEV']
-    except Exception as e:
-        IS_REAL=True #개발 pC가 아니면 운영
-        
+if __name__=="__main__":        
     print("#############################\n#############################\nDEV PC ? ",os.environ['DEV'],"\n#############################\n#############################")
     
     #############################
@@ -57,7 +52,7 @@ if __name__=="__main__":
     #페이지 만들기
     try:
         pu = pageUtil(CF.SITE_NAME, dirUtil.svr_tp_file_path, f'{dirUtil.file_dir_one}/index.html')
-        pu.set_adsense(CF.ADSENSE_CLIENT, CF.ADSENSE_SEARCH, IS_REAL)
+        pu.set_adsense(CF.ADSENSE_CLIENT, CF.ADSENSE_SEARCH, CF.IS_REAL)
         if CF.SITE_KIND == 'BOOK':
             isbn    = bookList[0]['ISBN_NO']
             pub_nm  = bookList[0]['PUB_SR']
