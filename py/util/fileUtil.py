@@ -2,6 +2,7 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from bs4 import BeautifulSoup as bfs
+from setting import config as CF
 
 def read_file(path):
     file = open(path, 'rt', encoding='UTF8')
@@ -21,6 +22,9 @@ def read_file(path):
 def save_file(path, content):
     f_output = open(f'{path}','w', encoding='UTF8')
     try:
+        print("file_dir : ",CF.file_dir)
+        print("file_dir_one : ",CF.file_dir_one)
+        print("file_dir_two : ",CF.file_dir_two)
         print("save_file path ",path)
         f_output.write(str(content))
     except Exception as e:
