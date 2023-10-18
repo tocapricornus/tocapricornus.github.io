@@ -17,8 +17,10 @@ file_dir_one =os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__
 file_dir_two = os.path.dirname(os.path.realpath(file_dir_one)) #D:\project_2023
 
 if CF.IS_REAL:
+	print("is real true")
 	file_dir_one = f'{file_dir_two}/{action_checkout_path}' 
-
+else:
+	print("is real false")
 #템플릿 위치
 svr_tp_path = file_dir_one+"/tp/example/" #D:\project_2023\html_template/tp/example/
 svr_tp_file_path = f'{svr_tp_path}{tp_name}' #D:\project_2023\html_template/tp/example/content.html
@@ -38,4 +40,5 @@ print("svr_tp_path : ", svr_tp_path)
 print("svr_tp_file_path : ", svr_tp_file_path) 
 print("svr_page_path : ", svr_page_path) 
 print("svr_page_cat_path : ", svr_page_cat_path)
+print("CF.IS_REAL : ",CF.IS_REAL)
 print("################ py.dirUtil.py 끝")
