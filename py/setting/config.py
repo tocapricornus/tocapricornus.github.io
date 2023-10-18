@@ -1,7 +1,7 @@
 #-*-coding:utf-8
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-IS_REAL                 = not os.environ['DEV']
+IS_REAL                 =  False if os.environ['DEV'] == 'Y' else True 
 
 if IS_REAL:
     print("is real true")
