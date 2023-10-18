@@ -12,6 +12,9 @@ class pageUtil:
 
         self.mainContent_soup = FILEUTIL.read_file(mainPath)
         self.mainContent = self.mainContent_soup.contents[2]
+        
+        self.url_file_nm = int(datetime.timestamp(datetime.now()))
+        self.ext = 'html'
         self.root_html='<!DOCTYPE html>\n'
 
         self.today=datetime.today()
@@ -30,8 +33,7 @@ class pageUtil:
         self.real_rotots_file_path = f'{self.file_dir_one}/robots.txt'     #D:\project_2023\html_template/robots.txt
         self.real_main_file_path = f'{self.file_dir_one}/index.html'         #D:\project_2023\html_template/index.html
 
-        self.url_file_nm = int(datetime.timestamp(datetime.now()))
-        self.ext = 'html'
+        
         self.real_content_path = f'/page/{self.today.year}{self.today.month}/{self.url_file_nm}.{self.ext}'
         self.page_canonical = f'{CF.SITE_URL}{self.real_content_path}'
         self.page_description =''
