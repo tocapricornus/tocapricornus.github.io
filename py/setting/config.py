@@ -9,6 +9,7 @@ SITE_KIND               = "BOOK" #BOOK
 KEYWORDS                = "염소자리 책 리뷰" #BLOG 
 ADSENSE_CLIENT          = 'ca-pub-3309468445717403'
 ADSENSE_SEARCH          = 'partner-pub-3309468445717403:scakuetu6bz'
+ANALYTICS_GTAG          = 'G-LGGMTY7TLB'
 DB_INFO                 = os.getenv('DB_INFO').split('|')
 DB_HOST	                = DB_INFO[0]
 DB_USER	                = DB_INFO[1]
