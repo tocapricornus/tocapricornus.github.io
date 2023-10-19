@@ -57,5 +57,5 @@ class AskDb:
 		self.insert(sqlId)
 
 	def df_isOrder(self, isbn):
-		return self.selectOne(f" SELECT COUNT(*) FROM {CF.DB_SID}.T_ORDER WHERE ORDER_KEY ='{isbn}' AND ORDER_TYPE='{CF.SITE_KIND}' ")[0]
+		return self.selectOne(f" SELECT COUNT(*) FROM {CF.DB_SID}.VW_ORDER WHERE ORDER_KEY ='{isbn}' AND ORDER_TYPE='{CF.SITE_KIND}' ")[0]
 		
