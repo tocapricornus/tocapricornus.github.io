@@ -5,7 +5,7 @@ name: action
 # on: [push]
 on:    
  schedule:
- - cron: '35 5,14 * * *'
+ - cron: '20 4,14 * * *'
 
 
 jobs:
