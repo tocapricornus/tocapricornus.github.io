@@ -62,6 +62,7 @@ jobs:
       run: |
         pwd
         cd ../static_site_repo
+        git pull
         git add --all
         git commit -m "autocommit"        
         git push -u origin main
