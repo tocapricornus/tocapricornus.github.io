@@ -38,9 +38,9 @@ class pageUtil:
 
 
     def set_adsense(self, ad_client, ad_search, is_real=False):
-        self.content.select_one(f'meta[name="adsense_client"]')['content']      = ad_client if is_real else '' 
+        self.content.select_one(f'meta[name="google-adsense-account"]')['content']      = ad_client if is_real else '' 
         self.content.select_one(f'meta[name="adsense_search"]')['content']      = ad_search if is_real else '' 
-        self.mainContent.select_one(f'meta[name="adsense_client"]')['content']  = ad_client if is_real else ''
+        self.mainContent.select_one(f'meta[name="google-adsense-account"]')['content']  = ad_client if is_real else ''
         self.mainContent.select_one(f'meta[name="adsense_search"]')['content']  = ad_search if is_real else '' 
 
 
