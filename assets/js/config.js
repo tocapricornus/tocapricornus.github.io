@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
           xhttp.send();
         }
       });
-      let adsense_client = document.querySelector('meta[name="adsense_client"]').content;
+      let adsense_client = document.querySelector('meta[name="google-adsense-account"]').content;
       
       if (adsense_client !== ''){
         loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+adsense_client, 'head', true, 'anonymous' );
