@@ -343,12 +343,9 @@ def repl_excp(repl_text):
 	
 	if repl_text.find('&lt;') > -1:
 		hi_max_cnt = repl_text.count("&lt;")
-		#print(hi_max_cnt)
-		repl_text = repl_text.replace("&lt;","<",hi_max_cnt)	
-	
+		repl_text = repl_text.replace("&lt;","<",hi_max_cnt)		
 	if repl_text.find('&gt;') > -1:
 		hi_max_cnt = repl_text.count("&gt;")
-		#print(hi_max_cnt)
 		repl_text = repl_text.replace("&gt;",">",hi_max_cnt)		
 	if repl_text.find('&') > -1:
 		rd_max_cnt = repl_text.count("&")
@@ -356,7 +353,22 @@ def repl_excp(repl_text):
 	if repl_text.find('nbsp;') > -1:
 		rd_max_cnt = repl_text.count("nbsp;")
 		repl_text = repl_text.replace("nbsp;","",rd_max_cnt)	
-		
+	if repl_text.find('nbsp') > -1:
+		rd_max_cnt = repl_text.count("nbsp")
+		repl_text = repl_text.replace("nbsp"," ",rd_max_cnt)			
+	if repl_text.find('lt') > -1:
+		hi_max_cnt = repl_text.count("lt")
+		repl_text = repl_text.replace("lt","<",hi_max_cnt)		
+	if repl_text.find('gt') > -1:
+		hi_max_cnt = repl_text.count("gt")
+		repl_text = repl_text.replace("gt",">",hi_max_cnt)	
+	if repl_text.find('gt') > -1:
+		hi_max_cnt = repl_text.count("gt")
+		repl_text = repl_text.replace("gt",">",hi_max_cnt)		
+	if repl_text.find('quot') > -1:
+		hi_max_cnt = repl_text.count("quot")
+		repl_text = repl_text.replace("quot"," ",hi_max_cnt)
+
 	return repl_text
 
 def isStrEqual(str1, str2):		
