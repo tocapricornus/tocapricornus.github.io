@@ -58,6 +58,9 @@ window.addEventListener('load', function() {
       if (adsense_client !== ''){
         loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+adsense_client, 'head', true, 'anonymous' );
         loadScript('/assets/js/google_search.js', 'body', false);
+        loadScript('https://www.googletagmanager.com/gtag/js?id=G-LGGMTY7TLB', 'head', true);
+        loadScript('/assets/js/gtag.js', 'head', false);
+
       }
 
       loadScript('/assets/vendor/js/helpers.js', 'body', false);
