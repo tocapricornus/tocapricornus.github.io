@@ -53,6 +53,8 @@ class pageUtil:
         self.mainContent.select_one('title').string = CF.SITE_NAME
         self.mainContent.select_one('link[rel="canonical"]')['href'] = CF.SITE_URL
         self.mainContent.select_one('meta[name="description"]')['content'] = CF.SITE_DESC
+        self.mainContent.select_one('meta[name="keywords"]')['content'] = CF.KEYWORDS
+        
       
     def set_page_nm(self, order_key, ext):
         self.page_file_nm = f'{self.today.year}{self.today.month}{order_key}'
@@ -70,7 +72,9 @@ class pageUtil:
         self.page_description = self.page_content_text[:200]
         
         self.content.select_one('meta[name="description"]')['content'] = self.page_content_text[:200]
+        self.content.select_one('meta[name="keywords"]')['content'] = CF.KEYWORDS
         self.content.select_one('link[rel="canonical"]')['href'] = self.page_canonical
+        
 
         self.content.select_one('title').string = title_nm
         self.content.select_one('#title_nm').string = title_nm
