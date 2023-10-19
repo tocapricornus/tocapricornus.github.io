@@ -106,7 +106,7 @@ class kyobo():
 						self.ad.df_orderInsert(isbn, 'N')
 						print("cnt : ", str(cnt)," ISBN_NO : ",isbn)
 					
-					if len(reviewList) > 5:
+					if len(reviewList) >= 5:
 						self.book_list.append( {"BOOK_NM":book_nm,"BOOK_IMG_L_URL":coverLargeUrl,
 											"BOOK_IMG_S_URL":coverSmallUrl,"AUTHOR":author,"ISBN_NO":isbn,"PUB_SR":publisher,"PUB_DT":pubDate,"BOOK_CD":book_cd,
 											"REVIEW_LIST":reviewList,"BOOK_DESC":description,"BOOK_DESC2":description2,"BOOK_DESC3":description3
