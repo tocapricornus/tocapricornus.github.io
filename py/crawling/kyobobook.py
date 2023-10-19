@@ -51,9 +51,9 @@ class kyobo():
 							
 				try:
 					naver_api_book_result 			= self.nvApi.bookSearch(isbn)
-					description			=  askUtil.custUtil(naver_api_book_result,'description')
-					if not description:
-						description = desc
+					# description			=  askUtil.custUtil(naver_api_book_result,'description')
+					# if not description:
+					description = desc
 					coverLargeUrl 		= askUtil.custUtil(naver_api_book_result,'image')
 					coverSmallUrl 		= askUtil.custUtil(naver_api_book_result,'image')
 				except Exception as e:
