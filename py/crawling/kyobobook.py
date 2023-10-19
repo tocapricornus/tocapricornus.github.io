@@ -51,12 +51,12 @@ class kyobo():
 							
 				try:
 					naver_api_book_result 			= self.nvApi.bookSearch(isbn)
-					print("naver_api_book_result : ",naver_api_book_result)
+					# print("naver_api_book_result : ",naver_api_book_result)
 					# description			=  askUtil.custUtil(naver_api_book_result,'description')
 					# if not description:
 					description = desc
-					coverLargeUrl 		= askUtil.custUtil(naver_api_book_result,'image')
-					coverSmallUrl 		= askUtil.custUtil(naver_api_book_result,'image')
+					coverLargeUrl 		= naver_api_book_result['image']
+					coverSmallUrl 		= naver_api_book_result['image']
 				except Exception as e:
 					description = desc			
 					print("################## nv e ##########: ",e)
@@ -65,7 +65,10 @@ class kyobo():
 				link_c 				= ''
 				book_cd 			= saleCmdtClstName
 
-
+				# print("description : ",description)
+				# print("author : ",author)
+				# print("isbn : ",isbn)
+				# print("coverLargeUrl : ",coverLargeUrl)
 				if description and author and isbn and coverLargeUrl:
 					book_nm = askUtil.getSqlReplace(book_nm)				
 					description = askUtil.repl_excp(askUtil.getSqlReplace(description))		
@@ -103,7 +106,7 @@ class kyobo():
 						self.ad.df_orderInsert(isbn, 'N')
 						print("cnt : ", str(cnt)," ISBN_NO : ",isbn)
 					
-					if len(reviewList) > 10:
+					if len(reviewList) > 5:
 						self.book_list.append( {"BOOK_NM":book_nm,"BOOK_IMG_L_URL":coverLargeUrl,
 											"BOOK_IMG_S_URL":coverSmallUrl,"AUTHOR":author,"ISBN_NO":isbn,"PUB_SR":publisher,"PUB_DT":pubDate,"BOOK_CD":book_cd,
 											"REVIEW_LIST":reviewList,"BOOK_DESC":description,"BOOK_DESC2":description2,"BOOK_DESC3":description3
