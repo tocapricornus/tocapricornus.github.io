@@ -11,13 +11,13 @@ let menu, animate;
   //-----------------
 
   let layoutMenuEl = document.querySelectorAll('#layout-menu');
-  console.log("layoutMenuEl : "+layoutMenuEl)
+  // console.log("layoutMenuEl : "+layoutMenuEl)
   layoutMenuEl.forEach(function (element) {
     menu = new Menu(element, {
       orientation: 'vertical',
       closeChildren: false
     });
-    console.log("menu : "+menu)
+    // console.log("menu : "+menu)
     // Change parameter to true if you want scroll animation
     window.Helpers.scrollToActive((animate = false));
     window.Helpers.mainMenu = menu;
@@ -25,20 +25,20 @@ let menu, animate;
 
   // Initialize menu togglers and bind click on each
   let menuToggler = document.querySelectorAll('.layout-menu-toggle');
-  console.log("menuToggler : "+menuToggler)
-  console.log("menuToggler : "+menuToggler.keys)
+  // console.log("menuToggler : "+menuToggler)
+  // console.log("menuToggler : "+menuToggler.keys)
   menuToggler.forEach(item => {
     item.addEventListener('click', event => {
       event.preventDefault();
-      console.log("window :"+window)
-      console.log("window.Helpers : "+window.Helpers)
+      // console.log("window :"+window)
+      // console.log("window.Helpers : "+window.Helpers)
       window.Helpers.toggleCollapsed();
     });
   });
 
   // Display menu toggle (layout-menu-toggle) on hover with delay
   let delay = function (elem, callback) {
-    console.log("delay : ")
+    // console.log("delay : ")
     let timeout = null;
     elem.onmouseenter = function () {
       // Set timeout to be a timer which will invoke callback after 300ms (not for small screen)
