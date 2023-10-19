@@ -54,7 +54,7 @@ if __name__=="__main__":
     #페이지 만들기
     try:
         pu = pageUtil(CF.SITE_NAME, dirUtil.svr_tp_file_path, f'{dirUtil.file_dir_one}/index.html')
-        pu.set_adsense(CF.ADSENSE_CLIENT, CF.ADSENSE_SEARCH, CF.IS_REAL)
+        pu.set_adsense(CF.ADSENSE_CLIENT, CF.ADSENSE_SEARCH, CF.ANALYTICS_GTAG, CF.IS_REAL)
         if CF.SITE_KIND == 'BOOK':
             isbn    = bookList[0]['ISBN_NO']
             pub_nm  = bookList[0]['PUB_SR']
