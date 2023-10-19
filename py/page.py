@@ -37,11 +37,14 @@ class pageUtil:
 
 
 
-    def set_adsense(self, ad_client, ad_search, is_real=False):
+    def set_adsense(self, ad_client, ad_search, analytics_gtag, is_real=False):
         self.content.select_one(f'meta[name="google-adsense-account"]')['content']      = ad_client if is_real else '' 
         self.content.select_one(f'meta[name="adsense_search"]')['content']      = ad_search if is_real else '' 
+        self.content.select_one(f'meta[name="analytics_gtag"]')['content']      = analytics_gtag if is_real else '' 
         self.mainContent.select_one(f'meta[name="google-adsense-account"]')['content']  = ad_client if is_real else ''
         self.mainContent.select_one(f'meta[name="adsense_search"]')['content']  = ad_search if is_real else '' 
+        self.mainContent.select_one(f'meta[name="analytics_gtag"]')['content']  = analytics_gtag if is_real else '' 
+        
 
 
     def site_kind_proc(self):
