@@ -12,8 +12,7 @@ class pageUtil:
 
         self.mainContent_soup = FILEUTIL.read_file(mainPath)
         self.mainContent = self.mainContent_soup.contents[2]
-        self.url_file_nm = int(datetime.timestamp(datetime.now()))
-        self.ext = 'html'
+        
         self.root_html='<!DOCTYPE html>\n'
 
         self.today=datetime.today()
@@ -33,10 +32,11 @@ class pageUtil:
         self.real_main_file_path = f'{self.file_dir_one}/index.html'         #D:\project_2023\html_template/index.html
 
         
-        self.real_content_path = f'/page/{self.today.year}{self.today.month}/{self.url_file_nm}.{self.ext}'
-        self.page_canonical = f'{CF.SITE_URL}{self.real_content_path}'
         self.page_description =''
     
+
+
+
     def set_adsense(self, ad_client, ad_search, is_real=False):
         self.content.select_one(f'meta[name="adsense_client"]')['content']      = ad_client if is_real else '' 
         self.content.select_one(f'meta[name="adsense_search"]')['content']      = ad_search if is_real else '' 
@@ -54,7 +54,13 @@ class pageUtil:
         self.mainContent.select_one('link[rel="canonical"]')['href'] = CF.SITE_URL
         self.mainContent.select_one('meta[name="description"]')['content'] = CF.SITE_DESC
       
+    def set_page_nm(self, order_key, ext):
+        self.page_file_nm = f'{self.today.year}{self.today.month}{order_key}'
+        self.ext = ext
+        self.real_content_path = f'/page/{self.today.year}{self.today.month}/{self.page_file_nm}.{self.ext}'
+        self.page_canonical = f'{CF.SITE_URL}{self.real_content_path}'
 
+    
     def change_content(self, path, title_nm, img_url, content_list ):
         print("change_content start")
         self.page_title_nm = title_nm
@@ -84,7 +90,7 @@ class pageUtil:
         self.change_main_page()
         print("change_content asid footer sitemap robots mainpage end")
     
-    def make_book(self, isbn, pub_nm, pub_dt, author):
+    def set_book_info(self, isbn, pub_nm, pub_dt, author):
         self.content.select_one('#isbn').string  = isbn
         self.content.select_one('#pub_nm').string = pub_nm
         self.content.select_one('#pub_dt').string = pub_dt
