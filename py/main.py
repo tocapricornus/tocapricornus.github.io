@@ -27,8 +27,8 @@ def project_origin(origin=False):
     quit()
 
 if __name__=="__main__":        
-    print("#############################\n#############################\nDEV PC ? ",os.environ['DEV'],"\n#############################\n#############################")
-    
+    print("#############################\n#############################\nDEV PC ? ",CF.IS_REAL,"\n#############################\n#############################")
+  
     #############################
     #주의 : 모든페이지 삭제시 사용
     # project_origin(origin=True)
@@ -39,6 +39,8 @@ if __name__=="__main__":
     ad = ask_db.AskDb()
     kbb = kyobobook.kyobo(ad,naverApi.NaverApi())
     bookList = kbb.getBookList()
+    print("kyboo book list size : ", len(bookList))
+
     # print("============ bookList", bookList)
     try:
         if bookList:
@@ -58,8 +60,14 @@ if __name__=="__main__":
             pub_nm  = bookList[0]['PUB_SR']
             pub_dt  = bookList[0]['PUB_DT']
             author  = bookList[0]['AUTHOR']
-            pu.make_book(isbn, pub_nm, pub_dt, author)
-        pu.change_content(f'{dirUtil.svr_page_cat_path}/{pu.url_file_nm}.{pu.ext}', title_nm, img_url, content_list)
+            pu.set_book_info(isbn, pub_nm, pub_dt, author)
+            pu.set_page_nm(isbn, 'html')
+            print(" isbn : ", isbn)
+            
+        else:
+            pu.set_page_nm('1') # file name
+
+        pu.change_content(f'{dirUtil.svr_page_cat_path}/{pu.page_file_nm}.{pu.ext}', title_nm, img_url, content_list)
         ad.df_orderInsert(isbn, 'Y')
     except Exception as e:
         print("main.py make page e ", e)
