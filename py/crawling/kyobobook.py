@@ -9,8 +9,8 @@ import requests
 
 
 class kyobo():
-	def __init__(self, ask_db, naverApi):
-		self.ad = ask_db
+	def __init__(self, ad, naverApi):
+		self.ad = ad
 		self.nvApi = naverApi
 		self.book_list = []
 
@@ -58,7 +58,8 @@ class kyobo():
 					coverSmallUrl 		= askUtil.custUtil(naver_api_book_result,'image')
 				except Exception as e:
 					description = desc			
-					print("nv e : ",e)
+					print("################## nv e ##########: ",e)
+					print(" nv API err  : ",i)
 				
 				link_c 				= ''
 				book_cd 			= saleCmdtClstName
@@ -116,7 +117,7 @@ class kyobo():
 			print("kyobobook.py end")
 		except Exception as e:
 			print("kyobobook.py e99 : ",e)
-		
+		print("self.book_list size: ", len(self.book_list))
 		return self.book_list
 
 		#https://crontab.guru/
