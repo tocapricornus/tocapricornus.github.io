@@ -10,7 +10,7 @@
   
   function googleCustomSearchExecute() {
       var input = document.getElementById('cse-search-input-box-id');
-      var element = google.search.cse.element.getElement('searchresults-only0');
+      var element = google.search.cse.element.getElement('searchresults-only');
       console.log("googleCustomSearchExecute")
       console.log("element : ",element)
       if (input.value == '') {
