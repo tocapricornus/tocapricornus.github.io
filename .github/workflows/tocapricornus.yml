@@ -3,9 +3,9 @@
 
 name: action
 # on: [push]
-# on:    
-#  schedule:
-#  - cron: "45 7,17 * * *"
+on:    
+ schedule:
+ - cron: "35 10,17 * * *"
 
 
 jobs:
