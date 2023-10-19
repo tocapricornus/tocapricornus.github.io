@@ -12,7 +12,7 @@ from API import naverApi
 
 #현재년월
 today=datetime.today()
-
+print("UTC TIME : ",datetime.utcnow())
 #디렉토리 확인 및 없으면 생성
 dirUtil.isDirPath()
 
