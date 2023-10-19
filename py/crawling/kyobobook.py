@@ -51,6 +51,7 @@ class kyobo():
 							
 				try:
 					naver_api_book_result 			= self.nvApi.bookSearch(isbn)
+					print("naver_api_book_result : ",naver_api_book_result)
 					# description			=  askUtil.custUtil(naver_api_book_result,'description')
 					# if not description:
 					description = desc
@@ -59,7 +60,7 @@ class kyobo():
 				except Exception as e:
 					description = desc			
 					print("################## nv e ##########: ",e)
-					print(" nv API err  : ",i)
+					# print(" nv API err  : ",i)
 				
 				link_c 				= ''
 				book_cd 			= saleCmdtClstName
