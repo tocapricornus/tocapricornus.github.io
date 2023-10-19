@@ -154,15 +154,12 @@ class pageUtil:
     
     def change_sitemap(self, origin=False):
         sitemap_data = FILEUTIL.file_open_text(self.real_sitemap_file_path)
-        new_data =''
-        new_data = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-
-        if not origin:
-            if sitemap_data.find(self.real_content_path) == -1:
-                first_idx = len(new_data)
-                new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>'
-
-        new_data += '</urlset>'  
+        new_data ='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        if not origin and sitemap_data.find(self.real_content_path) == -1:
+            first_idx = len(new_data)
+            new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n'
+            new_data += sitemap_data[first_idx+1:]
+            
         FILEUTIL.save_file(self.real_sitemap_file_path, new_data)
 
     def change_robots(self):
