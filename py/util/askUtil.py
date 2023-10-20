@@ -368,7 +368,12 @@ def repl_excp(repl_text):
 	if repl_text.find('quot') > -1:
 		hi_max_cnt = repl_text.count("quot")
 		repl_text = repl_text.replace("quot"," ",hi_max_cnt)
-
+	if repl_text.find('lsquo') > -1:
+		hi_max_cnt = repl_text.count("lsquo")
+		repl_text = repl_text.replace("lsquo"," ",hi_max_cnt)
+	if repl_text.find('rsquo') > -1:
+		hi_max_cnt = repl_text.count("rsquo")
+		repl_text = repl_text.replace("rsquo"," ",hi_max_cnt)
 	return repl_text
 
 def isStrEqual(str1, str2):		
