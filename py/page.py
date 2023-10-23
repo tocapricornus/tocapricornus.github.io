@@ -166,6 +166,8 @@ class pageUtil:
             first_idx = len(new_data)
             new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n'
             new_data += sitemap_data[first_idx:]
+        else:
+            new_data+='</urlset>'
             
         FILEUTIL.save_file(self.real_sitemap_file_path, new_data)
 
