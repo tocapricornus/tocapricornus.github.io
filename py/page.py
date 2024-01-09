@@ -164,7 +164,7 @@ class pageUtil:
         new_data =sitemap_data[:sitemap_data.find('sitemap/0.9">')+len('sitemap/0.9">')]
         if not origin and sitemap_data.find(self.real_content_path) == -1:
             first_idx = len(new_data)
-            new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.month}-{self.today.day}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n'
+            new_data += f'<url><loc>{CF.SITE_URL}{self.real_content_path}</loc><lastmod>{self.today.year}-{self.today.strftime("%m")}-{self.today.strftime("%d")}</lastmod></url>\n'
             new_data += sitemap_data[first_idx:]
         else:
             new_data+='</urlset>'
